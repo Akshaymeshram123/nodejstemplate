@@ -2,6 +2,8 @@ const express = require("express")
 const path = require("path")
 const hbs = require("hbs")
 
+const port = process.env.PORT | 80;
+
 const app = express();
 
 app.use(express.static(path.join(__dirname,"../public")))
@@ -16,6 +18,6 @@ app.get("/",(req,res)=>{
 
 
 
-app.listen(80,()=>{
+app.listen(port,()=>{
     console.log("connected")
 })
